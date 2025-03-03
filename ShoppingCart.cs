@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DSA_Project
 {
-    // A simple linked list–based shopping cart.
+    
     public class ShoppingCart
     {
-        // Internal node class for the linked list.
+        
         private class CartNode
         {
             public ShoppingCartItem Data;
@@ -18,7 +18,7 @@ namespace DSA_Project
 
         private CartNode head;
 
-        // Adds an item to the cart. If the item already exists, increase its quantity.
+       
         public void AddItem(ShoppingCartItem item)
         {
             CartNode current = head;
@@ -31,11 +31,10 @@ namespace DSA_Project
                 }
                 current = current.Next;
             }
-            // Insert new node at the beginning.
+            
             head = new CartNode { Data = item, Next = head };
         }
 
-        // Retrieves all cart items as a List.
         public List<ShoppingCartItem> GetAllItems()
         {
             List<ShoppingCartItem> list = new List<ShoppingCartItem>();
@@ -48,7 +47,7 @@ namespace DSA_Project
             return list;
         }
 
-        // Clears the cart.
+        
         public void Clear() => head = null;
     }
 }

@@ -65,7 +65,7 @@ namespace DSA_Project
 
     };
 
-        // Shopping cart instance.
+        
         static ShoppingCart cart = new ShoppingCart();
 
         static void Main()
@@ -104,7 +104,7 @@ namespace DSA_Project
             }
         }
 
-        // Browse items with sorting and add-to-cart options.
+        
         static void BrowseItems()
         {
             while (true)
@@ -116,7 +116,7 @@ namespace DSA_Project
                 Console.WriteLine("3. Price");
                 Console.WriteLine("4. Back to Main Menu");
                 Console.Write("Choose sorting criterion: ");
-                string sortChoice = Console.ReadLine(); //getting choice for sorting name or category or price
+                string sortChoice = Console.ReadLine(); 
                 if (sortChoice == "4")
                     return;
 
@@ -126,13 +126,13 @@ namespace DSA_Project
                 Console.WriteLine("2. Quick Sort");
                 Console.WriteLine("3. Merge Sort");
                 Console.Write("Your choice: ");
-                string algoChoice = Console.ReadLine();                     //getting sorting algorithm for sorting
+                string algoChoice = Console.ReadLine();                    
 
 
-                Item[] sortedItems = ListItems.ToArray();                  // Create an array copy of the items list.
+                Item[] sortedItems = ListItems.ToArray();                  
 
 
-                Comparison<Item> comparison = null;                     // Choose the correct comparison method.
+                Comparison<Item> comparison = null;                     
 
                 if (sortChoice == "1")
                     comparison = Sorting.CompareByName;
@@ -147,7 +147,7 @@ namespace DSA_Project
                     continue;
                 }
 
-                // Apply the chosen sorting algorithm.
+                
                 if (algoChoice == "1")
                 {
                     Stopwatch stpwtch = Stopwatch.StartNew();
@@ -176,7 +176,7 @@ namespace DSA_Project
                     continue;
                 }
 
-                // Display the sorted items.
+                
                 Console.WriteLine("\nID  Name                Category       Price");
                 Console.WriteLine("-------------------------------------------------");
                 foreach (var item in sortedItems)
@@ -184,7 +184,7 @@ namespace DSA_Project
                     Console.WriteLine($"{item.Id,-3} {item.Name,-18} {item.Category,-12} {item.Price,10:C}");
                 }
 
-                // Add to cart flow.
+                
                 Console.Write("\nEnter item ID to add to cart (0 to go back): ");
                 if (int.TryParse(Console.ReadLine(), out int id) && id != 0)
                 {
@@ -210,13 +210,13 @@ namespace DSA_Project
                 }
                 else
                 {
-                    // Return to main menu.
+                   
                     return;
                 }
             }
         }
 
-        // View items in the shopping cart.
+        
         static void ViewCart()
         {
             Console.Clear();
@@ -244,7 +244,7 @@ namespace DSA_Project
             Console.ReadKey();
         }
 
-        // Checkout: save the order details to a file and clear the cart.
+        
         static void Checkout()
         {
             var cartItems = cart.GetAllItems();

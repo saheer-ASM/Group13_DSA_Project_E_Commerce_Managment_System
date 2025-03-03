@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DSA_Project
 {
-    // Contains comparison methods and sorting algorithms.
+    
     public static class Sorting
     {
-        // Comparison method for sorting items by Name.
+        
         public static int CompareByName(Item a, Item b)
         {
             return string.Compare(a.Name, b.Name, StringComparison.Ordinal);
@@ -20,7 +20,7 @@ namespace DSA_Project
 
 
 
-        // Comparison method for sorting items by Category.
+        
         public static int CompareByCategory(Item a, Item b)
         {
             return string.Compare(a.Category, b.Category, StringComparison.Ordinal);
@@ -31,7 +31,7 @@ namespace DSA_Project
 
 
 
-        // Comparison method for sorting items by Price.
+       
         public static int CompareByPrice(Item a, Item b)
         {
             return a.Price.CompareTo(b.Price);
@@ -42,7 +42,7 @@ namespace DSA_Project
 
 
 
-        //  Bubble Sort 
+        
         public static void BubbleSort(Item[] items, Comparison<Item> compare)
         {
             int n = items.Length;
@@ -61,7 +61,7 @@ namespace DSA_Project
             }
         }
 
-        //  Quick Sort 
+        
         public static void QuickSort(Item[] items, int low, int high, Comparison<Item> compare)
         {
             if (low < high)
@@ -74,7 +74,7 @@ namespace DSA_Project
 
         private static int Partition(Item[] items, int low, int high, Comparison<Item> compare)
         {
-            Item pivot = items[high]; // Use last element as pivot.
+            Item pivot = items[high]; 
             int i = low - 1;
             for (int j = low; j < high; j++)
             {
@@ -93,7 +93,7 @@ namespace DSA_Project
             return i + 1;
         }
 
-        //Merge Sort 
+        
         public static void MergeSort(Item[] items, Comparison<Item> compare)
         {
             if (items.Length <= 1)
