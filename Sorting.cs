@@ -15,17 +15,32 @@ namespace DSA_Project
             return string.Compare(a.Name, b.Name, StringComparison.Ordinal);
         }
 
+
+
+
+
+
         // Comparison method for sorting items by Category.
         public static int CompareByCategory(Item a, Item b)
         {
             return string.Compare(a.Category, b.Category, StringComparison.Ordinal);
         }
 
+
+
+
+
+
         // Comparison method for sorting items by Price.
         public static int CompareByPrice(Item a, Item b)
         {
             return a.Price.CompareTo(b.Price);
         }
+
+
+
+
+
 
         //  Bubble Sort 
         public static void BubbleSort(Item[] items, Comparison<Item> compare)
@@ -37,7 +52,7 @@ namespace DSA_Project
                 {
                     if (compare(items[j], items[j + 1]) > 0)
                     {
-                        // Swap the items.
+                        
                         Item temp = items[j];
                         items[j] = items[j + 1];
                         items[j + 1] = temp;
@@ -71,7 +86,7 @@ namespace DSA_Project
                     items[j] = temp;
                 }
             }
-            // Place pivot at the correct position.
+            
             Item tempPivot = items[i + 1];
             items[i + 1] = items[high];
             items[high] = tempPivot;
